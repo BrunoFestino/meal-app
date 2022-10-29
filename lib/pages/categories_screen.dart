@@ -12,20 +12,17 @@ class CategoriesScreen extends StatelessWidget {
     List<Categories> categories = DUMMY_CATEGORIES.map((e) {
       return Categories(id: e.id, title: e.title, color: e.color);
     }).toList();
-    return Scaffold(
-      appBar: AppBar(title: const Text('Test title')),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(25),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 20,
-          crossAxisSpacing: 20,
-          childAspectRatio: 1.10,
-        ),
-        itemBuilder: (context, i) => CategoryItem(
-            categories[i].id, categories[i].title, categories[i].color),
-        itemCount: categories.length,
+    return GridView.builder(
+      padding: const EdgeInsets.all(25),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 20,
+        crossAxisSpacing: 20,
+        childAspectRatio: 1.10,
       ),
+      itemBuilder: (context, i) => CategoryItem(
+          categories[i].id, categories[i].title, categories[i].color),
+      itemCount: categories.length,
     );
   }
 }
