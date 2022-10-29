@@ -10,7 +10,7 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Categories> categories = DUMMY_CATEGORIES.map((e) {
-      return Categories(id: '1', title: e.title, color: e.color);
+      return Categories(id: e.id, title: e.title, color: e.color);
     }).toList();
     return Scaffold(
       appBar: AppBar(title: const Text('Test title')),
@@ -22,8 +22,8 @@ class CategoriesScreen extends StatelessWidget {
           crossAxisSpacing: 20,
           childAspectRatio: 1.10,
         ),
-        itemBuilder: (context, i) =>
-            CategoryItem(categories[i].title, categories[i].color),
+        itemBuilder: (context, i) => CategoryItem(
+            categories[i].id, categories[i].title, categories[i].color),
         itemCount: categories.length,
       ),
     );

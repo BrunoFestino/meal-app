@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/pages/category_meals_page.dart';
 import 'package:meal_app/pages/home_page.dart';
+import 'package:meal_app/pages/meal_detail_screen.dart';
 
 import 'pages/categories_screen.dart';
 
@@ -27,6 +29,10 @@ class MyApp extends StatelessWidget {
                 const TextStyle(fontSize: 24, fontFamily: 'RobotoCondensed')),
       ),
       home: const CategoriesScreen(),
+      routes: {
+        '/categorie-meals': (ctx) => const CategoryMeals(),
+        MealDetail.routeName: (context) => const MealDetail(),
+      },
     );
   }
 }

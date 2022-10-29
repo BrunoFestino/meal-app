@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('DeliMeals'),
       ),
-      body: Text('Navigation Time!'),
+      body: const Text('Navigation Time!'),
     );
   }
 }
